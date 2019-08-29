@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿#include "include/viewer.h"
+=======
+#include "include/viewer.h"
+>>>>>>> a47defbbe8e23127ae86f1121d86d20d09b37768
 #include <pangolin/pangolin.h>
 
 #include <mutex>
@@ -35,7 +39,11 @@ void Viewer::Run()
     //这个变量配合SetFinish函数用于指示该函数是否执行完毕
     mbFinished = false;
 
+<<<<<<< HEAD
     pangolin::CreateWindowAndBind("SFM: Map Viewer",1024,768);//创建一个窗口，并定义窗口大小
+=======
+    pangolin::CreateWindowAndBind("ORB-SLAM2: Map Viewer",1024,768);//创建一个窗口，并定义窗口大小
+>>>>>>> a47defbbe8e23127ae86f1121d86d20d09b37768
 
     // 3D Mouse handler requires depth testing to be enabled
     // 启动深度测试，OpenGL只绘制最前面的一层，绘制时检查当前像素前面是否有别的像素，如果别的像素挡住了它，那它就不会绘制
@@ -79,7 +87,11 @@ void Viewer::Run()
     pangolin::OpenGlMatrix Twc;
     Twc.SetIdentity();
 
+<<<<<<< HEAD
     cv::namedWindow("Motion_Structure: Current Frame");
+=======
+    cv::namedWindow("ORB-SLAM2: Current Frame");
+>>>>>>> a47defbbe8e23127ae86f1121d86d20d09b37768
 
     bool bFollow = true;
     bool bLocalizationMode = false;
@@ -135,7 +147,11 @@ void Viewer::Run()
         pangolin::FinishFrame();
 
         cv::Mat im = mpFrameDrawer->DrawFrame();
+<<<<<<< HEAD
         cv::imshow("Motion_Structure: Current Frame",im);
+=======
+        cv::imshow("ORB-SLAM2: Current Frame",im);
+>>>>>>> a47defbbe8e23127ae86f1121d86d20d09b37768
         cv::waitKey(mT);
         if(menuReset)
         {
